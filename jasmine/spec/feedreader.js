@@ -33,7 +33,7 @@ $(function() {
          */
 		 it('has a url', function() {
 			 allFeeds.forEach(function(feed) {
-				 expect(feed.url).toBeDefined();
+				 expect(feed.url).toBeTruthy();
 			 });
 		 });
 

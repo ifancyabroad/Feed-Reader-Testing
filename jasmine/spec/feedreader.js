@@ -29,6 +29,7 @@ $(function() {
          */
 		 it('has a url', function() {
 			 allFeeds.forEach(function(feed) {
+				 expect(feed.url).toBeDefined();
 				 expect(feed.url).toBeTruthy();
 			 });
 		 });
@@ -40,6 +41,7 @@ $(function() {
          */
 		 it('has a name', function() {
 			 allFeeds.forEach(function(feed) {
+				 expect(feed.name).toBeDefined();
 				 expect(feed.name).toBeTruthy();
 			 });
 		 });
@@ -77,7 +79,7 @@ $(function() {
 		const feed = $('.feed');
 
         /* This test ensures when the loadFeed
-         * function is called and completes its work, there is at least
+         * function is called, completes its work and there is at least
          * a single .entry element within the .feed container.
          */
 		 

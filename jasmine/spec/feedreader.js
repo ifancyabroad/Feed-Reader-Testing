@@ -102,6 +102,8 @@ $(function() {
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 	describe('New Feed Selection', function() {
+		const feed = $('.feed');
+		let entries = [];
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
@@ -109,12 +111,18 @@ $(function() {
          */
 		beforeEach(function(done) {
 			loadFeed(0, function() {
-				done();
+				entries.push(feed.children().html());
+				loadFeed(1, function() {
+					entries.push(feed.children().html());
+					done();
+				});
 			});
 		});
 		
+		
 		it('should have different content', function(done) {
-			
+			expect(entries[0] === entries[1]).toBeFalsy();
+			done();
 		});
 		 
 	});

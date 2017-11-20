@@ -79,7 +79,7 @@ $(function() {
 		const feed = $('.feed');
 
         /* This test ensures when the loadFeed
-         * function is called, completes its work and there is at least
+         * function is called and completes its work that there is at least
          * a single .entry element within the .feed container.
          */
 		 
@@ -111,9 +111,9 @@ $(function() {
 		// loadFeed is run first as it is asynchronous. It is run twice to check.
 		beforeEach(function(done) {
 			loadFeed(0, function() {
-				entries.push(feed.children().html());
+				entries.push(feed.html());
 				loadFeed(1, function() {
-					entries.push(feed.children().html());
+					entries.push(feed.html());
 					done();
 				});
 			});

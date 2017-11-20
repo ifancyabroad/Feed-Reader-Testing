@@ -76,8 +76,6 @@ $(function() {
 
     /* Test suite for Initial Entries */
 	describe('Initial Entries', function() {
-		const feed = $('.feed');
-
         /* This test ensures when the loadFeed
          * function is called and completes its work that there is at least
          * a single .entry element within the .feed container.
@@ -92,7 +90,8 @@ $(function() {
 		
 		// Check to ensure there is an element within the feed container
 		it('should have at least a single entry element', function(done) {
-			expect(feed.children().hasClass('entry-link')).toBeTruthy();
+			const entries = $('.feed .entry');
+			expect(entries.length).toBeGreaterThan(0);
 			done();
 		});
 	});
